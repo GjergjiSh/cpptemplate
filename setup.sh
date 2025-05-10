@@ -31,8 +31,9 @@ ROOT_CMAKE="${CURRENT_DIR}/CMakeLists.txt"
 LIB_CMAKE="${CURRENT_DIR}/lib/CMakeLists.txt"
 TESTS_CMAKE="${CURRENT_DIR}/tests/CMakeLists.txt"
 MAIN_CMAKE="${CURRENT_DIR}/main/CMakeLists.txt"
+VSCODE_LAUNCH="${CURRENT_DIR}/.vscode/launch.json"
 
-update_cmake_file() {
+replace_text_in_file() {
     local file_path="$1"
     local old_name="$2"
     local new_name="$3"
@@ -52,14 +53,16 @@ update_cmake_file() {
     return 0
 }
 
-update_cmake_file "$ROOT_CMAKE" "x_project" "${LIB_NAME}"
+replace_text_in_file "$ROOT_CMAKE" "x_project" "${LIB_NAME}"
 
-update_cmake_file "$LIB_CMAKE" "x_lib" "${LIB_NAME}"
+replace_text_in_file "$VSCODE_LAUNCH" "x_test" "${LIB_NAME}"
 
-update_cmake_file "$TESTS_CMAKE" "x_test" "${LIB_NAME}_tests"
+replace_text_in_file "$LIB_CMAKE" "x_lib" "${LIB_NAME}"
 
-update_cmake_file "$TESTS_CMAKE" "x_lib" "${LIB_NAME}"
+replace_text_in_file "$TESTS_CMAKE" "x_test" "${LIB_NAME}_tests"
 
-update_cmake_file "$MAIN_CMAKE" "x_lib" "${LIB_NAME}"
+replace_text_in_file "$TESTS_CMAKE" "x_lib" "${LIB_NAME}"
+
+replace_text_in_file "$MAIN_CMAKE" "x_lib" "${LIB_NAME}"
 
 echo "Setup script finished."

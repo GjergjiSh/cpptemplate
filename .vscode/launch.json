@@ -2,10 +2,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Debug a2lwriter_tests",
+            "name": "Debug x_test_tests",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/tests/a2lwriter_tests",
+            "program": "${workspaceFolder}/build/tests/x_test_tests",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/build",
