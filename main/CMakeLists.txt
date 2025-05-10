@@ -1,5 +1,5 @@
-add_executable(a2lwriter_example
+add_executable(main
     main.cpp
 )
 
-target_link_libraries(a2lwriter_example PRIVATE a2lwriter)
+target_link_libraries(main PRIVATE x_lib)

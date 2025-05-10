@@ -8,11 +8,11 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(a2lwriter_tests
-    a2lwriter_tests.cpp
+add_executable(x_test
+    x_test.cpp
 )
 
-target_link_libraries(a2lwriter_tests PRIVATE a2lwriter gtest gtest_main)
+target_link_libraries(x_test PRIVATE x_lib gtest gtest_main)
 
 include(GoogleTest)
-gtest_discover_tests(a2lwriter_tests)
+gtest_discover_tests(x_test)
