@@ -3,6 +3,7 @@
     "configurations": [
         {
             "name": "Debug x_test_tests",
+            "preLaunchTask": "CMake Build",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/build/tests/x_test_tests",
